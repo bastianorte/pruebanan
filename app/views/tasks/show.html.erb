@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @task.name %>
+</p>
+
+<p>
+  <strong></strong>
+  <%= image_tag @task.photo, class: 'img_responsive' %>
+</p>
+</div>
+<div class="col">
+<strong>Ranking:</strong><br>
+<% @task.users.each do |j| %>
+
+<%= j.email %><br>
+
+<% end %>
+</div>
+<div class="col">
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
+</div>
+</div>
